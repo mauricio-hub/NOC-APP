@@ -103,3 +103,5 @@
 {"level":"low","message":"URL is ok: https://www.google.com/","origin":"check-service.ts","createdAt":"2026-07-18T04:13:57.348Z"}
 {"level":"low","message":"URL is ok: https://www.google.com/","origin":"check-service.ts","createdAt":"2026-07-18T04:14:00.151Z"}
 {"level":"low","message":"URL is ok: https://www.google.com/","origin":"check-service.ts","createdAt":"2026-07-18T04:14:03.168Z"}
+{"level":"low","message":"Email sent","origin":"email-service.ts","createdAt":"2026-07-19T03:52:40.482Z"}
+{"level":"low","message":"Email sent","origin":"send-logs.ts","createdAt":"2026-07-19T04:13:08.015Z"}
