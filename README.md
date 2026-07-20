@@ -1,83 +1,83 @@
 # NOC App - Notification and Monitoring Center
 
-Sistema de monitoreo y control de notificaciones con arquitectura limpia en Node.js + TypeScript.
+A notification and monitoring system with clean architecture built with Node.js + TypeScript.
 
-## Descripción
+## Description
 
-NOC (Notification and Monitoring Center) es una aplicación que realiza verificaciones de URL, registra eventos y envía notificaciones por correo electrónico basadas en logs del sistema.
+NOC (Notification and Monitoring Center) is an application that performs URL health checks, logs events, and sends email notifications based on system logs.
 
-## Características
+## Features
 
-- 🔍 **Verificación de URLs** - Monitoreo de disponibilidad de servicios
-- 📝 **Sistema de Logs** - Registro persistente de eventos en el sistema de archivos
-- 📧 **Notificaciones por Email** - Envío automático de logs por correo
-- ⏱️ **Tareas Programadas** - Ejecución de jobs con cron
-- 🏛️ **Arquitectura Limpia** - Separación clara de capas (Domain, Application, Infrastructure)
+- 🔍 **URL Health Checks** - Monitor service availability
+- 📝 **Log System** - Persistent event logging in the file system
+- 📧 **Email Notifications** - Automatic log delivery via email
+- ⏱️ **Scheduled Tasks** - Cron job execution
+- 🏛️ **Clean Architecture** - Clear separation of concerns (Domain, Application, Infrastructure)
 
-## Requisitos
+## Requirements
 
 - Node.js 18+
-- npm o yarn
+- npm or yarn
 
-## Instalación
+## Installation
 
 ```bash
-# Clonar el repositorio
+# Clone the repository
 git clone <repository-url>
 cd 05-noc
 
-# Instalar dependencias
+# Install dependencies
 npm install
 ```
 
-## Configuración
+## Configuration
 
-1. Copiar el archivo `.env.example` a `.env`:
+1. Copy `.env.example` to `.env`:
 ```bash
 cp .env.example .env
 ```
 
-2. Configurar las variables de entorno:
+2. Configure environment variables:
 ```env
 PORT=3000
-MAILER_SERVICE=gmail          # Servicio de correo (gmail, outlook, etc)
-MAILEAR_EMAIL=tu@email.com    # Tu email
-MAILER_SECRET_KEY=tuPassword  # Contraseña/token de aplicación
+MAILER_SERVICE=gmail
+MAILEAR_EMAIL=your@email.com
+MAILER_SECRET_KEY=yourPassword
 ```
 
-## Scripts Disponibles
+## Available Scripts
 
 ```bash
-# Desarrollo con recarga automática
+# Development with auto-reload
 npm run dev
 
-# Compilar TypeScript
+# Compile TypeScript
 npm run build
 
-# Compilar e iniciar la aplicación
+# Build and start the application
 npm start
 ```
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 src/
-├── domain/              # Lógica de negocio
-│   ├── entities/        # Entidades
-│   ├── use-cases/       # Casos de uso
-│   └── repository/      # Interfaces de repositorio
-├── infrastructure/      # Implementaciones técnicas
-│   ├── datasources/     # Fuentes de datos
-│   └── repositories/    # Implementaciones de repositorios
-└── presentation/        # Capa de presentación
-    ├── server.ts        # Configuración del servidor
-    ├── cron/            # Servicios de tareas programadas
-    └── email/           # Servicios de email
+├── domain/              # Business logic
+│   ├── entities/        # Domain entities
+│   ├── use-cases/       # Use cases
+│   └── repository/      # Repository interfaces
+├── infrastructure/      # Technical implementations
+│   ├── datasources/     # Data sources
+│   └── repositories/    # Repository implementations
+└── presentation/        # Presentation layer
+    ├── server.ts        # Server setup
+    ├── cron/            # Scheduled job services
+    └── email/           # Email services
 ```
 
-## Uso
+## Usage
 
-### Verificar URL
+### Check URL Health
 
 ```typescript
 const checkService = new CheckService(
@@ -89,7 +89,7 @@ const checkService = new CheckService(
 await checkService.execute("https://www.example.com");
 ```
 
-### Enviar Logs por Email
+### Send Logs via Email
 
 ```typescript
 const sendEmailLogs = new SendEmailLogs(
@@ -100,15 +100,15 @@ const sendEmailLogs = new SendEmailLogs(
 await sendEmailLogs.execute(['recipient@example.com']);
 ```
 
-## Tecnologías
+## Technologies
 
-- **TypeScript** - Lenguaje tipado
+- **TypeScript** - Typed language
 - **Node.js** - Runtime
-- **Nodemailer** - Envío de emails
-- **Cron** - Programación de tareas
-- **dotenv** - Gestión de variables de entorno
-- **ts-node-dev** - Desarrollo con TypeScript
+- **Nodemailer** - Email delivery
+- **Cron** - Task scheduling
+- **dotenv** - Environment configuration
+- **ts-node-dev** - TypeScript development
 
-## Licencia
+## License
 
 ISC
