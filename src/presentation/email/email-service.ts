@@ -20,8 +20,8 @@ export class EmailService {
     private Transporter = nodemailer.createTransport({
         service: envs.MAILER_SERVICE,
         auth: {
-            user: envs.MAILEAR_EMAIL,
-            pass: envs.MAILER_SECRET_KEY
+            user: envs.MAILER_FROM_EMAIL,
+            pass: envs.MAILER_PASSWORD
         }
     })
 
